@@ -54,6 +54,7 @@ fn main() {
             println!("cargo:rustc-link-lib=dylib={}", &arg[2..]);
         }
     }
+    println!("{}", "cargo:rustc-link-lib=dylib=ffi");
 
     // This breaks the link step on Windows with MSVC.
     if !cfg!(windows) {
