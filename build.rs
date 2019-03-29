@@ -60,7 +60,7 @@ fn main() {
     if !cfg!(windows) {
         // Determine which C++ standard library to use: LLVM's or GCC's.
         let cxxflags = llvm_config("--cxxflags");
-        let libcpp = if cxxflags.contains("stdlib=libc++") { "c++" } else { "stdc++" };
+        let libcpp = "c++";
         println!("cargo:rustc-link-lib={}", libcpp);
     }
 
